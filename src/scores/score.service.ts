@@ -14,7 +14,7 @@ export class ScoreService {
     return score.save();
   }
   public async getScore(): Promise<ScoreDto[]>{
-    const scores = await this.scoreModel.find().exec();
+    const scores = await this.scoreModel.find().limit(5).sort({score: -1}); //Sorts docs by score and selects 5 highest
 //    if(!scores || !scores[0]){
   //    throw new HttpException('Not Found', 404);
   //  }
