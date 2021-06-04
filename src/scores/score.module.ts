@@ -4,6 +4,7 @@ import { ScoreController } from './score.controller';
 import { ScoreService } from './score.service';
 import {ScoreSchema} from './score.schema';
 @Module({
+  // imports and combines controller and service as module which can then be imported to app.module
   imports: [
     MongooseModule.forFeature([
       {

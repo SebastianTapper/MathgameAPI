@@ -6,10 +6,12 @@ import {ScoreDto} from './score.dto';
 export class ScoreController {
   constructor(private readonly scoreService: ScoreService) {}
 
+//handles get request to /score which will call function getScore from score.service
   @Get('score')
   public getScore() {
     return this.scoreService.getScore();
   }
+// handles post request to / score by calling function postScore from score.service
   @Post('score')
   public postScore(@Body() score: ScoreDto) {
     return this.scoreService.postScore(score);
